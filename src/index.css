@@ -10,6 +10,57 @@ body {
   color: #f1faee;
   
 }
+
+.profile-photo {
+  height: 400px;
+  float: right;
+  margin-left: 75px;
+  clear: both;
+}
+
+.intro-p {
+  margin-right: 0px;
+  overflow: auto;
+  display: block;
+}
+
+
+.nav-list {
+  list-style-type: none;
+ margin: 0;
+ padding: 0;
+ display: inline;
+ overflow: hidden;
+}
+
+.nav-item {
+ float: right;
+}
+
+.nav-link {
+  display: block;
+  color: #f1faee;
+  text-align: center;
+  padding: 20px 35px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  background-color:#e63946;
+}
+
+.nav-bar {
+  display: block;
+}
+
+.main-content {
+  padding-top:100px;
+  display: block;
+  float: left;
+}
+
 .intro-text {
   font-size: 50px;
 }
@@ -36,6 +87,25 @@ a {
 .contact-me:hover {
   cursor: pointer;
 }
+
+/*RESUME PAGE*/
+.solid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+}
+
+.course-table, th, td {
+  border-collapse: collapse;
+  border: 1px solid;
+}
+
+th, td {
+  padding: 15px;
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

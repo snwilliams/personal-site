@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Nav from './Nav';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -8,7 +9,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
-        <App />
+        <div className="nav-bar"><Nav /></div>
+        <div className="main-content"><App /></div>
     </Router>
 );
 

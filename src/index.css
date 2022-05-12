@@ -133,6 +133,11 @@ th, td {
   padding-bottom: 20px;
 }
 
+.footer-email {
+  text-decoration: none;
+  color:#f1faee;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

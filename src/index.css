@@ -102,7 +102,19 @@ a {
 }
 
 th, td {
-  padding: 15px;
+  padding: 3px 15px;
+}
+
+.my-resume > h1, h2, h3, p {
+  margin: 0;
+}
+
+.resume-link {
+  color:aqua;
+}
+
+.resume-link:visited {
+  color:#e63946;
 }
 
 

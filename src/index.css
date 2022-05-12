@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width: 75%;
+  /*max-width: 75%;*/
   background-color: #1d3557;
   color: #f1faee;
   
@@ -56,9 +56,9 @@ body {
 }
 
 .main-content {
+  margin: auto;
+  max-width: 75%;
   padding-top:100px;
-  display: block;
-  float: left;
 }
 
 .intro-text {
@@ -117,6 +117,26 @@ th, td {
   color:#e63946;
 }
 
+/*FOOTER*/
+.footer {
+  background-color: #e63946;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color:#f1faee;
+  font-size: 15px;
+  text-align: center;
+}
+
+.footer-text {
+  padding-top:20px;
+  padding-bottom: 20px;
+}
+
+.footer-email {
+  text-decoration: none;
+  color:#f1faee;
+}
 
 
 code {

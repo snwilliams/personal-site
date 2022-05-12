@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import sara from "./assets/images/sara-photo.png"
 
 export function Home() {
@@ -137,10 +138,26 @@ export function Resume() {
 }
 
 export function MyProjects() {
-    return (
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        fetch(`https://api.github.com/users/snwilliams/repos`)
+        .then(response=>response.json())
+        .then(setData);
+    }, []);
+
+    if (data) {
+        return (
+            <div>
+                <h1 className="intro-text">My Projects</h1>
+                <div>{JSON.stringify(data)}</div>
+            </div>
+        );
+    }
+    return(
         <div>
-            <h1 className="intro-text">My Projects</h1>
-            <p>Test</p>
+            <p>No data...</p>
         </div>
-    );
+    )
+
 }

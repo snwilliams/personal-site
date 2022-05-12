@@ -131,6 +131,7 @@ export function Resume() {
                     <li>Officer, Front Range Community College Computer Science Club, 2018-2019</li>
                 </ul>
 
+            <p className="final-text">Do you have any other questions about my experience? Please contact me!</p>
         </div>
     );
 }

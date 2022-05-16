@@ -53,30 +53,34 @@ export function Resume() {
             <h2>Relevant Coursework</h2>
             <hr className="solid"/>
                 <table className="course-table">
-                    <tr>
-                        <th>Course Name</th>
-                        <th>Skills Gained</th>
-                    </tr>
-                    <tr>
-                        <td><a className="resume-link" href="https://frontrange.smartcatalogiq.com/Current/Catalog/Courses/CSC-Computer-Science/1000/CSC-1060">Computer Science I</a></td>
-                        <td>Java, algorithm development, data representation, logical expressions, functions, input/output</td>
-                    </tr>
-                    <tr>
-                        <td><a className="resume-link" href="https://frontrange.smartcatalogiq.com/Current/Catalog/Courses/CSC-Computer-Science/1000/CSC-1061">Computer Science II</a></td>
-                        <td>advanced Java, advanced algorithms, data structures, problem-solving</td>
-                    </tr>
-                    <tr>
-                        <td>Web Development</td>
-                        <td>HTML, CSS, Fuel MVC, JavaScript, PHP, SpringBoot</td>
-                    </tr>
-                    <tr>
-                        <td>Software Engineering</td>
-                        <td>Agile, Git, ReactJS, Boostrap, Travis CI, ZenHub, Java</td>
-                    </tr>
-                    <tr>
-                        <td>Database Systems</td>
-                        <td>SQL, Relation database design, database management</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Skills Gained</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a className="resume-link" href="https://frontrange.smartcatalogiq.com/Current/Catalog/Courses/CSC-Computer-Science/1000/CSC-1060">Computer Science I</a></td>
+                            <td>Java, algorithm development, data representation, logical expressions, functions, input/output</td>
+                        </tr>
+                        <tr>
+                            <td><a className="resume-link" href="https://frontrange.smartcatalogiq.com/Current/Catalog/Courses/CSC-Computer-Science/1000/CSC-1061">Computer Science II</a></td>
+                            <td>advanced Java, advanced algorithms, data structures, problem-solving</td>
+                        </tr>
+                        <tr>
+                            <td>Web Development</td>
+                            <td>HTML, CSS, Fuel MVC, JavaScript, PHP, SpringBoot</td>
+                        </tr>
+                        <tr>
+                            <td>Software Engineering</td>
+                            <td>Agile, Git, ReactJS, Boostrap, Travis CI, ZenHub, Java</td>
+                        </tr>
+                        <tr>
+                            <td>Database Systems</td>
+                            <td>SQL, Relation database design, database management</td>
+                        </tr>
+                    </tbody>
                 </table>
             <br />
             <h2>Professional Experience</h2>
@@ -139,25 +143,48 @@ export function Resume() {
 
 export function MyProjects() {
     const [data, setData] = useState(null);
-
+    const [error, setError] = useState(null);
+    
     useEffect(() => {
-        fetch(`https://api.github.com/users/snwilliams/repos`)
+        fetch(`https://api.github.com/users/snwilliams/repos`, {
+            method: "GET",
+            headers: {
+                Authorization: 'token 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'
+            }
+        })
         .then(response=>response.json())
-        .then(setData);
-    }, []);
+        .then(setData)
+        .catch(setError)
+    },[]);
+  
 
-    if (data) {
+    if (error) {
+        console.log(error);
         return (
-            <div>
-                <h1 className="intro-text">My Projects</h1>
-                <div>{JSON.stringify(data)}</div>
+            <div className="error">
+                <h1>There was an error accessing this page. Please view my repositories on Github.</h1>
+                <a href="https://github.com/snwilliams?tab=repositories"><button className="contact-me">Go to GitHub</button></a>
             </div>
+
         );
     }
+
+    if(!data) return null;
+    
+    const repoData = data.map((repo)=> {
+        return(
+            <div>
+                <h4>{repo.name}</h4>
+                <p>{repo.description}</p>
+            </div>
+        )
+    })
     return(
         <div>
-            <p>No data...</p>
+            <h1>Repositories</h1>
+            {repoData}
         </div>
-    )
+    ); 
+  
 
 }

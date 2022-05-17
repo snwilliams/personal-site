@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Nav from './Nav';
-import App from './App';
-import Footer from './Footer';
+import Nav from './components/Nav';
+import App from './components/App';
+import Footer from './components/Footer';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 

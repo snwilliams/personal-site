@@ -1,19 +1,4 @@
-import { useEffect, useState } from "react";
-import sara from "./assets/images/sara-photo.png"
-
-export function Home() {
-    return(
-        <div className="home">
-            <img className="profile-photo" src={sara} alt="Sara Williams, a white woman with brown hair" />
-            <h1 className="intro-text">Hi, I'm Sara.</h1>
-            <p className="intro-p">I created this website using ReactJS to show that I'm more than just a few bullets on a resume. What I lack in programming experience, I
-            make up for in determination to learn and great communication and teamwork skills. I have a lot to offer the right team, so if you're 
-            searching for a dedicated employee, let's talk!
-            </p>
-            <a href="mailto:sara.williams.n@gmail.com"><button className="contact-me">Contact Me</button></a>
-        </div>
-    );
-}
+import React from "react";
 
 export function Resume() {
     return (
@@ -73,11 +58,11 @@ export function Resume() {
                             <td>HTML, CSS, Fuel MVC, JavaScript, PHP, SpringBoot</td>
                         </tr>
                         <tr>
-                            <td>Software Engineering</td>
+                            <td><a className="resume-link" href="https://catalog.colostate.edu/search/?P=CS%20314">Software Engineering</a></td>
                             <td>Agile, Git, ReactJS, Boostrap, Travis CI, ZenHub, Java</td>
                         </tr>
                         <tr>
-                            <td>Database Systems</td>
+                            <td><a className="resume-link" href="https://catalog.colostate.edu/search/?P=CS%20430">Database Systems</a></td>
                             <td>SQL, Relation database design, database management</td>
                         </tr>
                     </tbody>
@@ -145,54 +130,4 @@ export function Resume() {
             <p className="final-text">Do you have any other questions about my experience? Please contact me!</p>
         </div>
     );
-}
-
-export function MyProjects() {
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(null);
-    
-    useEffect(() => {
-        fetch(`https://api.github.com/users/snwilliams/repos`)
-        .then(response=> {
-            if(response.status===403) {
-                //console.log("API response: " + response.status);
-                setError(response.status);
-            } else {
-                console.log(response.status);
-                return response.json()
-            }
-        })
-        .then(setData)
-        .catch(setError)
-    },[]);
-
-    if (error) {
-        //console.log(error);
-        return (
-            <div className="error">
-                <h1>This page was built using the GitHub API. If you are seeing this message, it means that the limit of calls to the API was exceeded. Please view my repositories on Github.</h1>
-                <a href="https://github.com/snwilliams?tab=repositories"><button className="contact-me">Go to GitHub</button></a>
-            </div>
-
-        );
-    } 
-
-    if(!data) return null;
-    
-    const repoData = data.map((repo)=> {
-        return(
-            <div>
-                <h4><a href={repo.html_url}>{repo.name}</a></h4>
-                <p>{repo.description}</p>
-            </div>
-        )
-    })
-    return(
-        <div>
-            <h1>Repositories</h1>
-            {repoData}
-        </div>
-    ); 
-  
-
 }

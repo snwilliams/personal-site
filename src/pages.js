@@ -149,8 +149,8 @@ export function MyProjects() {
         fetch(`https://api.github.com/users/snwilliams/repos`)
         .then(response=> {
             if(response.status===403) {
-                console.log("403 response: " + response.status);
-                setError(403);
+                //console.log("API response: " + response.status);
+                setError(response.status);
             } else {
                 console.log(response.status);
                 return response.json()
@@ -161,7 +161,7 @@ export function MyProjects() {
     },[]);
 
     if (error) {
-        console.log(error);
+        //console.log(error);
         return (
             <div className="error">
                 <h1>This page was built using the GitHub API. If you are seeing this message, it means that the limit of calls to the API was exceeded. Please view my repositories on Github.</h1>

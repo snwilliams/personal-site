@@ -89,7 +89,13 @@ export function Resume() {
                 <p>Off-Campus Life at Colorado State University, Fort Collins, CO</p>
                 <p><i>July 2019-Current</i></p>
                 <ul>
-                    <li>Performed updates and maintenance of office WordPress websites, using the Elementor plugin, as well as HTML, CSS, and JavaScript.</li>
+                    <li>Migrated Off Campus Life's previous website to WordPress, and created all elements and non-University mandated design features using Elementor
+                        editor, as well as HTML, CSS, and JavaScript.</li>
+                    <li>Overhauled website due to accomodate remote working due to Covid-19 pandemic to prioritize different methods of contact, which
+                        was used as an example for other offices in the division to follow.
+                    </li>
+                    <li>Perform updates and maintenance of office WordPress websites, using the Elementor editor, as well as HTML, CSS, and JavaScript.</li>
+                    <li>Supervise and train new employees on website maintenance and basic updates.</li>
                     <li>Evaluate and install plugins on WordPress website to achieve specific user-requested functionality.</li>
                     <li>Provide exceptional customer service and accurate information to students regarding office services and programs, renting in the Fort Collins community, city codes and ordinances, and building neighborhood relations.</li>
                 </ul>

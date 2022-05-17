@@ -4,7 +4,7 @@ import sara from "./assets/images/sara-photo.png"
 export function Home() {
     return(
         <div className="home">
-            <img className="profile-photo" src={sara} alt="a picture of Sara Williams, a white woman with brown hair" />
+            <img className="profile-photo" src={sara} alt="Sara Williams, a white woman with brown hair" />
             <h1 className="intro-text">Hi, I'm Sara.</h1>
             <p className="intro-p">I created this website using ReactJS to show that I'm more than just a few bullets on a resume. What I lack in programming experience, I
             make up for in determination to learn and great communication and teamwork skills. I have a lot to offer the right team, so if you're 
@@ -146,35 +146,37 @@ export function MyProjects() {
     const [error, setError] = useState(null);
     
     useEffect(() => {
-        fetch(`https://api.github.com/users/snwilliams/repos`, {
-            method: "GET",
-            headers: {
-                Authorization: 'token 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'
+        fetch(`https://api.github.com/users/snwilliams/repos`)
+        .then(response=> {
+            if(response.status===403) {
+                console.log("403 response: " + response.status);
+                setError(403);
+            } else {
+                console.log(response.status);
+                return response.json()
             }
         })
-        .then(response=>response.json())
         .then(setData)
         .catch(setError)
     },[]);
-  
 
     if (error) {
         console.log(error);
         return (
             <div className="error">
-                <h1>There was an error accessing this page. Please view my repositories on Github.</h1>
+                <h1>This page was built using the GitHub API. If you are seeing this message, it means that the limit of calls to the API was exceeded. Please view my repositories on Github.</h1>
                 <a href="https://github.com/snwilliams?tab=repositories"><button className="contact-me">Go to GitHub</button></a>
             </div>
 
         );
-    }
+    } 
 
     if(!data) return null;
     
     const repoData = data.map((repo)=> {
         return(
             <div>
-                <h4>{repo.name}</h4>
+                <h4><a href={repo.html_url}>{repo.name}</a></h4>
                 <p>{repo.description}</p>
             </div>
         )

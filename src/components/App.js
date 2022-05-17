@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router';
-import { Home, Resume, MyProjects } from "./pages";
+import { Home } from './Home';
+import { Resume } from './Resume';
+import { MyProjects } from './MyProjects';
 
 function App() {
   return (

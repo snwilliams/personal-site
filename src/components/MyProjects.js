@@ -35,7 +35,7 @@ export function MyProjects() {
     const repoData = data.map((repo)=> {
         return(
             <div>
-                <h4><a href={repo.html_url}>{repo.name}</a></h4>
+                <h4><a className="resume-link" href={repo.html_url}>{repo.name}</a></h4>
                 <p>{repo.description}</p>
             </div>
         )

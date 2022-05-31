@@ -6,8 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*max-width: 75%;*/
-  background-color: #1d3557;
-  color: #f1faee;
+  background-color:#182A42;
+  color: #ffffff;
   
 }
 
@@ -40,7 +40,7 @@ body {
 
 .nav-link {
   display: block;
-  color: #f1faee;
+  color: #ffffff;
   text-align: center;
   padding: 20px 26px;
   text-decoration: none;
@@ -49,7 +49,7 @@ body {
 }
 
 .nav-link:hover {
-  background-color:#e63946;
+  background-color:#C35439;
 }
 
 .nav-bar {
@@ -70,9 +70,9 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-color: #e63946;
+  background-color: #c45326;
   border: none;
-  color: #f1faee;
+  color: #ffffff;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -88,6 +88,7 @@ a {
 
 .contact-me:hover {
   cursor: pointer;
+  background-color: #9c3209;
 }
 
 /*RESUME PAGE*/
@@ -112,11 +113,16 @@ th, td {
 }
 
 .resume-link {
-  color:aqua;
+  color:#c45326;
+  text-decoration: underline;
 }
 
 .resume-link:visited {
-  color:#e63946;
+  color:#ffffff;
+}
+
+.resume-link:hover {
+  color:#c45326;
 }
 
 .final-text {
@@ -125,11 +131,11 @@ th, td {
 
 /*FOOTER*/
 .footer {
-  background-color: #e63946;
+  background-color: #c45326;
   position: fixed;
   width: 100%;
   bottom: 0;
-  color:#f1faee;
+  color:#ffffff;
   font-size: 15px;
   text-align: center;
 }

@@ -41,7 +41,7 @@ export function MyProjects() {
         )
     })
     return(
-        <div>
+        <div className="repo-list">
             <h1>Repositories</h1>
             {repoData}
         </div>

@@ -3,7 +3,7 @@ import React from "react";
 export function Resume() {
     return (
         <div className="my-resume">
-            <h1 className="intro-text">Experience Summary</h1>
+            <h1 className="resume-header">Experience Summary</h1>
                 <hr className="solid"/>
                 <p>
                     After graduating from high school, I served for six years in the United States Navy as a language analyst. I was honorably discharged from the Navy in

@@ -8,3 +8,7 @@ intended as something of a more in-depth business card to interested recruiters 
 
 You can visit the website here: https://sara-williams.dev/
 
+## Example
+
+Here is a screenshot of what the website looks like:
+![Front page of website](src/assets/images/project-screenshot.png)
